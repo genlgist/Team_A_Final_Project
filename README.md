@@ -33,6 +33,8 @@ Step 3 - Upload datasets
 ![upload_AWS_S3](https://user-images.githubusercontent.com/82338072/132055101-cd3591d7-1405-4f6b-a5b8-cab37aed1d83.png)
 
 
+Upload will take up to 10 hours to complete.
+
 Future steps include establishing a Machine Learning Neural Network Model (tensorflow)
 
 ![NueNet](https://user-images.githubusercontent.com/82338072/132054511-8dcc8362-0530-4655-89dc-f59c41d0e57f.png)
