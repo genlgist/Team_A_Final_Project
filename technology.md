@@ -1,4 +1,7 @@
 # Technologies Used
+
+![image_name](https://github.com/genlgist/Team_A_Final_Project/blob/ChrisAdd/FinalProjectTechDiagram%202021-0903.001.jpeg)
+
 ## Data Cleaning and Analysis
 Python to help preprocessing of the images (Pandas?) to improve model efficacy (e.g. adding, removing, encoding?). jpeg files to be uploaded
 
@@ -18,4 +21,4 @@ Time Permitting
 v1.1 Add the ability to confirm or correctly classify the expression of the headshot.  Once confirmed or correctly classified the image is saved in the appropriate folder for future training or testing of the model.
 v1.2 Database of classification results are kept for dashboarding and model health.  
 
-[add architecture / tech stack diagram]
+
