@@ -1,12 +1,21 @@
 # Technologies Used
 ## Data Cleaning and Analysis
-Do we want to use Beautiful Soup to scrape images from a web page for testing or for additional training?  Is there some preprocessing of the images required to improve the model efficacy (e.g. adding, removing, encoding?)
+Python to help preprocessing of the images (Pandas?) to improve model efficacy (e.g. adding, removing, encoding?). jpeg files to be uploaded
 
 ## Database Storage
-AWS S3 bucket to store Kaggle images for training and testing.  Scrape and load other images for further model training and testing? Other metrics or data we would like to store with the images?
+AWS S3 bucket to store Kaggle images for training and testing.  Augment and join the dbase with new images after uploaded and classified?
 
 ## Machine Learning
-Tensorflow will be used to build a deep learning classification model that will be used to classify expressions of uploaded black and white headshots. Given that these are complex images multiple hidden layers will be required to build an effective model.  Use Jupyter notebooks or Google Colab to build the Tensorflow model?  Not just a simple single yes/no classification with a confusion matrix.  Will need to figure out how to assign to one of multiple classifications.
+Tensorflow will be used to build a deep learning classification model that will be used to classify expressions of uploaded black and white headshots. Given that these are complex images multiple hidden layers will be required to build an effective model.  Google Colab to build the Tensorflow model. Will need to figure out how to assign to one of multiple classifications.  Leverage MNIST model for black and white photos?
 
 ## Dashboard
-Use Bootstrap, HTML, Javascript front end for dashboard with ability to upload (event listener) a black and white image for a deep learning engine to classify expressions of headshots.  Use Flask for python visuals or metrics on the model itself (e.g. runtime, probability or confidence of match?) It will be hosted on ______.
+Use Bootstrap, HTML, Javascript front end for dashboard with ability to upload (event listener) a black and white image for a deep learning engine to classify expressions of headshots.  Use Flask for python visuals or metrics on the model itself (e.g. runtime, probability or confidence of match?)  Do we use REST APIs to merge python back end with web front end.  Flask app interaction with MongoDB.. can we use with AWS S3.  Percent confidence generated using tensorflow as well?
+
+Final project
+v1.0 Upload black and white head shot to be processed by a deep learning model that classifies the expression on the headshot.  The identified classification will be presented to the user along with the model's confidence level of correctly classifying.
+
+Time Permitting
+v1.1 Add the ability to confirm or correctly classify the expression of the headshot.  Once confirmed or correctly classified the image is saved in the appropriate folder for future training or testing of the model.
+v1.2 Database of classification results are kept for dashboarding and model health.  
+
+[add architecture / tech stack diagram]
