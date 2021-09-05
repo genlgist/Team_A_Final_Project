@@ -6,8 +6,27 @@
 - Naomi Shields
 - Regina Negrycz
 
-# Question
+# Content 
+
+## Selected Topic
+
+Learning facial expressions from an image.
+
+## Reason Topic Selected
+
+We are interested in working with the Machine Learning algorithm Convolutional Neural Network to classify images of facial recognition. 
+
+## Description of the data source
+
+Dataset FER-2013 is a Kaggle dataset consisting of 48x48 pixel grayscale images of faces. The faces have been automatically registered so that the face is more or less centered and occupies about the same amount of space in each image.
+
+The task is to categorize each face based on the emotion shown in the facial expression into one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral). The training set consists of 28,709 examples and the public test set consists of 3,589 examples.
+
+
+## Question
+
 By uploading images of facial expressions, can we accurately predict the facial expression?
+
 
 # Technologies
 
