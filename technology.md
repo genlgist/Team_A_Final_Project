@@ -14,10 +14,10 @@ Tensorflow will be used to build a convolutional neural network (CNN) classifica
 ## Dashboard
 Use Bootstrap, HTML, and Javascript front end for dashboard with ability to upload (event listener) a black and white image to be sent to the classification model.  Use Flask as the integration layer between the python model and the Javascript front end.  the dashboard(e.g. runtime, probability or confidence of match?)  Do we use REST APIs to merge python back end with web front end.  Flask app interaction with MongoDB.. can we use with AWS S3.  Percent confidence generated using tensorflow as well?
 
-FINAL PROJECT - v1.0
+FINAL PROJECT - v1.0:
 User uploads a black and white head shot to the dashboard which sets off an event for the image to be processed by a convolutional neural network model that classifies the expression on the headshot.  The identified classification will be presented to the user along with the model's confidence level of correctly classifying.
 
-FUTURE DEVELOPMENT
+## Future Development
 - v1.1 Add the ability to confirm or correctly classify the expression of the headshot.  Once confirmed or correctly classified the image is saved along with model outputs for trends and stats on how well the model is performing.  The images may be used for future updates and fitting of the model to better classify new images.
 - v1.2 Database of classification results are kept for dashboarding and model health.  
 - v2.1 Zoom 'self-awareness' plug-in that captures camera feed at a set frequency to provide a trend of expressions being telegraphed to other Zoom participants during the course of a meeting.  Dashboard includes a timeline trend.
