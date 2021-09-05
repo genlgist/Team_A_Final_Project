@@ -22,30 +22,63 @@ Dataset FER-2013 is a Kaggle dataset consisting of 48x48 pixel grayscale images 
 
 The task is to categorize each face based on the emotion shown in the facial expression into one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral). The training set consists of 28,709 examples and the public test set consists of 3,589 examples.
 
-
 ## Question
 
 By uploading images of facial expressions, can we accurately predict the facial expression?
 
+# Communication Protocols
+
+We will be using Zoom for scheduled class times as well as meetings outside of class, our Group-A Slack channel, and GitHub.
+
+# Project Segment 2
+
+Transform the database into a working model, refine the ML model, perform analysis and crate visuals for story as well as begin dashboard.
+
+# Project Segment 3
+
+Finalize database and ML models, create draft presentation and create the dashboard.
+
+# Project Segment 4
+
+Final updates to README.md and final touches on presentation and dashboard.  Practice presentation.
 
 # Technologies
 
 # Data Cleaning and Analysis
 
-Python to help preprocessing of the images (Pandas?) to improve model efficacy (e.g. adding, removing, encoding?). jpeg files to be uploaded
+Leverage Python, Tensorflow, and Keras to preprocess images (e.g. sizing, normalizing, encoding) to improve model classification efficacy.
 
 # Database Storage
 
-AWS S3 bucket to store Kaggle images for training and testing. Augment and join the dbase with new images after uploaded and classified?
+Leveraging AWS S3 bucket to store Kaggle images for training and testing. Consider adding a S3 bucket to keep history of new images uploaded for classification along with key model outputs for future development.
 
 # Machine Learning
 
-Tensorflow will be used to build a deep learning classification model that will be used to classify expressions of uploaded black and white headshots. Given that these are complex images multiple hidden layers will be required to build an effective model. Google Colab to build the Tensorflow model. Will need to figure out how to assign to one of multiple classifications. Leverage MNIST model for black and white photos?
+Tensorflow will be used to build a convolutional neural network (CNN) classification model that will be used to classify expressions of uploaded black and white headshots. Google Colab was used to code the model and import all necessary python libraries.
 
 # Dashboard
 
-Use Bootstrap, HTML, Javascript front end for dashboard with ability to upload (event listener) a black and white image for a deep learning engine to classify expressions of headshots. Use Flask for python visuals or metrics on the model itself (e.g. runtime, probability or confidence of match?) Do we use REST APIs to merge python back end with web front end. Flask app interaction with MongoDB.. can we use with AWS S3. Percent confidence generated using tensorflow as well?
+FINAL DELIVERABLE - v1.0: User uploads a black and white head shot to the dashboard which sets off an event for the image to be processed by a convolutional neural network model that classifies the expression on the headshot. The identified classification will be presented to the user along with the model's confidence level of the prediction.
 
-Final project v1.0 Upload black and white head shot to be processed by a deep learning model that classifies the expression on the headshot. The identified classification will be presented to the user along with the model's confidence level of correctly classifying.
+Bootstrap, HTML, and Javascript will be used to build the front end user interface (dashboard) with the ability to upload (with event listener) a black and white image for the classification model. Leverage Flask as the integration layer between the python model and the Javascript front end. Team is considering the option to include top 3 possible expression classifications sorted by model confidence level.
 
-Time Permitting v1.1 Add the ability to confirm or correctly classify the expression of the headshot. Once confirmed or correctly classified the image is saved in the appropriate folder for future training or testing of the model. v1.2 Database of classification results are kept for dashboarding and model health.
+# Future Development
+
+v1.1 Add the ability to confirm or correctly classify the expression of the headshot. Once confirmed or correctly classified the image is saved along with model outputs for trends and stats on how well the model is performing. The images may be used for future updates and model refitting to better classify new images.
+
+v1.2 Database of classification results are kept for dashboarding and model health.
+
+v2.1 Zoom 'self-awareness' plug-in that captures camera feed at a set frequency to provide a trend of expressions being telegraphed to other Zoom participants during the course of a meeting. Dashboard includes a timeline trend.
+
+v3.1 Zoom plug-in to provide people with autism a support tool that monitors the expressions of others on the Zoom call. Would include an expanded set of expressions that may be particularly helpful for people with autism.
+
+# ML Tech Diagram
+
+https://github.com/genlgist/Team_A_Final_Project/blob/ChrisAdd/FinalProjectTechDiagram%202021-0905.001.jpeg
+
+# Database Diagram
+
+https://github.com/genlgist/Team_A_Final_Project/blob/GregAdd/Resource/images/Facial%20Recognition%20-%20Flowchart.png
+
+
+
