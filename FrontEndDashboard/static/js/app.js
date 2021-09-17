@@ -20,6 +20,13 @@ function buildTable(data) {
       let cell = row.append("td");
       cell.text(val);
     });
+    
+    // var imgCell = Object.insertCell(-1);
+    // imgCell.innerHTML="New cell";
+
+    // var img = document.createElement('img');
+    // img.src = "static/images/happy.png";
+    // imgCell.appendChild(img);
   });
 }
 
@@ -90,3 +97,5 @@ function updateFilters() {
   
   // Build the table when the page loads
   buildTable(tableData);
+
+

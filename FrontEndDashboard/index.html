@@ -17,7 +17,7 @@
         </nav>
 
         <div class="jumbotron">
-            <h1 class="display-4">Emoji The Possibilities</h1>
+            <h1 class="display-5">Emoji The Possibilities</h1>
         </div>
 
         <div class="container-fluid">
@@ -27,7 +27,7 @@
                     <!-- Bring in image with buttons for upload new file and running model-->
                     <!-- Add event listeners for the buttons -->
 
-                    <h2>Loaded Image</h2>
+                    <h3>Image Selected</h3>
 
                         <!-- if images is False/None/non-existent, then default to error message -->
                         <img
@@ -36,14 +36,37 @@
                         />
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-md-1 pad-the-emo">
+                    <!-- add results from the model here -->
+                    <ol>
+                        <li>
+                            <img
+                            src="static/images/emo3/emo1.png"
+                            style="width:50px;height:50px;"
+                            />
+                        </li>
+                        <li>
+                            <img
+                            src="static/images/emo3/emo2.png"
+                            style="width:50px;height:50px;"
+                            />
+                        </li>
+                        <li>
+                            <img
+                            src="static/images/emo3/emo3.png"
+                            style="width:50px;height:50px;"
+                            />
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="col-md-4 pad-the-tbl">
                     <!-- add results from the model here -->
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>Expression</th>
                                 <th>EmoScore</th>
-                                <th>Emoji</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
