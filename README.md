@@ -1,6 +1,7 @@
 # Team_A_Final_Project
 
 # Team_Members
+<<<<<<< HEAD
 - Chris Morgan
 - Gregory Morales
 - Naomi Shields
@@ -32,7 +33,7 @@ We will be using Zoom for scheduled class times as well as meetings outside of c
 
 # Project Segment 2
 
-Transform the database into a working model, refine the ML model, perform analysis and crate visuals for story as well as begin dashboard.
+Transform the database into a working model, refine the ML model, perform analysis and create visuals for story as well as begin dashboard.
 
 # Project Segment 3
 
@@ -40,7 +41,7 @@ Finalize database and ML models, create draft presentation and create the dashbo
 
 # Project Segment 4
 
-Final updates to README.md and final touches on presentation and dashboard.  Practice presentation.
+Final updates to README.md and final touches to presentation and dashboard.  Practice presentation.
 
 # Technologies
 
@@ -54,7 +55,21 @@ Leveraging AWS S3 bucket to store Kaggle images for training and testing. Consid
 
 # Machine Learning
 
-Tensorflow will be used to build a convolutional neural network (CNN) classification model that will be used to classify expressions of uploaded black and white headshots. Google Colab was used to code the model and import all necessary python libraries.
+Tensorflow will be used to build a convolutional neural network (CNN) classification model that will be used to classify expressions of uploaded black and white headshots. Google Colab was used to code the model and import all necessary python libraries to build initial saved model in a hdf (.h5) file format. Team is also considering whether to embed this model directly into a flask or javascript app.
+
+# Benefits of a CNN Model
+
+Automatically detects the important features without human supervision.
+High accuracy rate for image classification and recognition.
+CNN is also proven effective with video, pattern and face recognition.
+The algorithm is fast and simple.
+
+# Limitations of a CNN Model
+
+Missing pixels can have a detrimental effect on the verification process of the model.
+If the CNN has several layers then the training process takes a lot of time if the computer doesn't consist of a good GPU.
+Requires a large dataset to process and train the neural network.
+
 
 # Dashboard
 
@@ -79,6 +94,4 @@ https://github.com/genlgist/Team_A_Final_Project/blob/ChrisAdd/FinalProjectTechD
 # Database Diagram
 
 https://github.com/genlgist/Team_A_Final_Project/blob/GregAdd/Resource/images/Facial%20Recognition%20-%20Flowchart.png
-
-
 
