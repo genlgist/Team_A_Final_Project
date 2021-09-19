@@ -77,6 +77,12 @@ FINAL DELIVERABLE - v1.0: User uploads a black and white head shot to the dashbo
 
 Bootstrap, HTML, and Javascript will be used to build the front end user interface (dashboard) with the ability to upload (with event listener) a black and white image for the classification model. Leverage Flask as the integration layer between the python model and the Javascript front end. Team is considering the option to include top 3 possible expression classifications sorted by model confidence level.
 
+# Google Slides Presentation
+Link to Slides: https://docs.google.com/presentation/d/1f8iF0860x5iSciTA6Nh4J3bSiO9BHCsGyO3rkhl06po/edit?pli=1#slide=id.gf0cf7b0833_0_45
+
+Link to PDF file in GitHub:
+https://github.com/genlgist/Team_A_Final_Project/blob/ReginaAdd/CNN_Model_Presentation.pdf
+
 # Future Development
 
 v1.1 Add the ability to confirm or correctly classify the expression of the headshot. Once confirmed or correctly classified the image is saved along with model outputs for trends and stats on how well the model is performing. The images may be used for future updates and model refitting to better classify new images.
