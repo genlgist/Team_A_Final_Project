@@ -1,0 +1,17 @@
+﻿body {
+    color: #f7f7f7;
+
+}
+
+.pad-the-emo {
+    padding-top: 100px;
+}
+
+.pad-the-tbl {
+    padding-top: 50px;
+}
+
+.jumbotron {
+    background-color: black;
+    text-align: center;
+}
