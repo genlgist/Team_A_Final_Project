@@ -12,24 +12,21 @@ import warnings
 
 # importing dependencies for flask 
 from flask import Flask, render_template
+from flask import jsonify
 
 ####### SETTING UP FLASK #########
 # defining flask app
 app = Flask(__name__) 
 
 ######## CREATING ROUTES ########
-# welcome route
+# welcome/index route
 @app.route("/")
-def welcome():
-    return(
-    '''
-    Welcome to the Facial Expression Prediction App!
+def index():
+    print("index is running!")
+    return render_template('index.html')
 
-    Follow this route to predict away!
-    /api/v1.0/predict
-    ''')
-
-@app.route("/api/v1.0/predict")
+# creating route that will run the model and create data for data.js
+@app.route("/predict")
 def predict():
     #initializations
     warnings.simplefilter("ignore")
@@ -39,11 +36,11 @@ def predict():
     ######## IMPORTING IMAGE AND LOADING MODEL #########
 
     #import image
-    img = Image.open('FrontEndDashboard/static/images/selected_img.jpeg')  #point to js resource folder holding this file. hold trained model in the resoure folder as well
+    img = Image.open('static/images/selected_img.jpeg')  #point to js resource folder holding this file. hold trained model in the resoure folder as well
 
 
     # load the saved model
-    model = load_model("FrontEndDashboard/models/final_model.h5")  # put in resource folder with selected image
+    model = load_model("FlaskDashboard/models/final_model.h5")  # put in resource folder with selected image
     print('Tensorflow keras Model loaded successfully')
 
 
@@ -104,10 +101,23 @@ def predict():
     top3_df = results_df.nlargest(3,'Distribution')
     top3_sum = top3_df.Distribution.sum()
     top3_df['PredictScore'] = top3_df['Distribution']/top3_sum
+    top3_df = top3_df.drop('Distribution', 1)
+    top3_df = top3_df.rename(columns={"PredictScore": "EmoScore"})
+    top3_df['EmoScore'] = top3_df['EmoScore'].map(lambda n: '{:.0%}'.format(n))
     top3_df
 
+
     # exporting to a JSON file
-    top3_df.to_json('./export.json',orient='records')
+    #result = top3_df.to_dict()
+    #data = jsonify(result)
+    data = top3_df.to_json(orient= 'records')
+    print(data)
+    return(data)
+
+   
     
-    return render_template('index.html')
-    
+# return JSON object in one route
+# have data.js call route to get JSON with d3 result
+# separate route that connects to the html
+
+
