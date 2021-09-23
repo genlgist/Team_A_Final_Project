@@ -40,7 +40,7 @@ def predict():
 
 
     # load the saved model
-    model = load_model("FlaskDashboard/models/final_model.h5")  # put in resource folder with selected image
+    model = load_model("models/final_model.h5")  # put in resource folder with selected image
     print('Tensorflow keras Model loaded successfully')
 
 
@@ -123,14 +123,11 @@ def predict():
         exportPath = '/emo'+str(i)+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emo3/emo'+str(i)+'.png'
         print(exportPath)
         img.save(exportPath)
-        
+
     # having route return JSON
     return(data)
 
    
     
-# return JSON object in one route
-# have data.js call route to get JSON with d3 result
-# separate route that connects to the html
 
 
