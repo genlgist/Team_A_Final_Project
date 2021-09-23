@@ -108,10 +108,23 @@ def predict():
 
 
     # exporting to a JSON file
-    #result = top3_df.to_dict()
-    #data = jsonify(result)
     data = top3_df.to_json(orient= 'records')
     print(data)
+
+    # save top 3 emojis to javascript image folder 'emo3'
+    while i<3:
+        #use top 3 results df to pull emotions type from top 3 instad of random choice for final file
+        emotion = top3_df.iloc[i]['Expression']
+        print(emotion)
+        path = '/content/'+emotion+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emoAll/'
+        print(path)
+        img = Image.open(path)
+        i+=1
+        exportPath = '/emo'+str(i)+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emo3/emo'+str(i)+'.png'
+        print(exportPath)
+        img.save(exportPath)
+        
+    # having route return JSON
     return(data)
 
    
