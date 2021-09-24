@@ -1,0 +1,149 @@
+﻿body {
+    color: #f7f7f7;
+
+}
+
+.pad-the-emo {
+    padding-top: 100px;
+}
+
+.pad-the-tbl {
+    padding-top: 50px;
+}
+
+.jumbotron {
+    background-color: black;
+    text-align: center;
+}
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+#upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-area {
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    position: relative;
+}
+
+.image-area::before {
+    content: 'Uploaded image result';
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+    z-index: 2;
+    position: relative;
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+body {
+    min-height: 100vh;
+    background-color: #757f9a;
+    background-image: linear-gradient(147deg, #757f9a 0%, #d7dde8 100%);
+}
+
+body {
+    background: #eee
+}
+
+.container {
+    margin-top: 200px
+}
+
+.btn {
+    display: inline-block;
+    margin-right: 20px;
+    letter-spacing: 2px;
+    border: 1px solid transparent
+}
+
+.btn-round {
+    border-radius: 4px !important
+}
+
+.btn i {
+    margin-right: 5px
+}
+
+.btn.btn-large i {
+    font-size: 24px
+}
+
+.button {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.btn.btn-large {
+    font-size: 18px;
+    padding: 18px 35px
+}
+
+.btn.btn-medium {
+    font-size: 14px;
+    padding: 10px 22px
+}
+
+.btn.btn-small {
+    font-size: 11px;
+    padding: 2px 14px;
+    letter-spacing: 1px
+}
+
+.btn.btn-very-small {
+    font-size: 9px;
+    padding: 1px 12px;
+    letter-spacing: 1px
+}
+
+.highlight-button {
+    border: 2px solid #000;
+    display: inline-block;
+    padding: 8px 20px 9px;
+    font-size: 12px;
+    color: #000;
+    background-color: transparent
+}
+
+.highlight-button:hover {
+    background-color: #000;
+    border: 2px solid #000;
+    color: #fff
+}
+
+.highlight-button i {
+    color: #000
+}
+
+.highlight-button:hover i {
+    color: #fff
+}
+/*
