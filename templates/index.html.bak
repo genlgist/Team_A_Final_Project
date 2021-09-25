@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sweet Emojis</title>
+    <link rel="stylesheet"
+          href=  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+          
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script>src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"</script>
+</head>
+<body class="bg-dark">
+    <div class="wrapper">
+
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">Sweet Emojis</a>
+        </nav>
+
+        <div class="jumbotron">
+            <h1 class="display-5">Emoji The Possibilities</h1>
+        </div>
+        <div class="container">
+            <p><h1 align="center">Python Flask Upload and display image</h1></p>
+            <div class="container">
+                <div class="row">
+                    <h2>Select a file to upload</h2>
+                    <div class="col-md-4">
+                        <div>
+                            <img src="{{ url_for('display_image', filename=filename) }}"
+                            style="width:300px;height:300px;"/>
+                        </div>
+                    </div>    
+                    <form method="POST" action="/" enctype="multipart/form-data">
+                        <dl>
+                            <p>
+                                <input type="file" name="file" class="form-control" autocomplete="off" required>
+                            </p>
+                        </dl>
+                        <p>
+                            <input type="submit" value="Upload" class="btn btn-info">                            
+                        </p>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="../static/js/upload.js"></script> -->
+    <!-- <script src="../static/js/app.js"></script> -->
+</body>
+</html>

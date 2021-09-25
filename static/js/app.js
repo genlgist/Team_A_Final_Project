@@ -7,9 +7,10 @@ function predict(){
         const data = response;
         
         tabulate(data, ['Expression', 'EmoScore']);
-        
     });
 }
+
+predict();
 
 //function to tabulate data
 function tabulate(data, columns) {

@@ -13,7 +13,7 @@ import warnings
 
 
 # importing dependencies for flask 
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, send_file
 from flask import jsonify
 
 ##### STORAGE LOCATION #####
@@ -22,7 +22,17 @@ UPLOAD_FOLDER = 'static/images/'
 ####### SETTING UP FLASK #########
 # defining flask app
 app = Flask(__name__)
-app.run(DEBUG=True)
+
+
+""" app.config["CACHE_TYPE"] = "null"
+# change to "redis" and restart to cache again
+
+# some time later
+cache.init_app(app) """
+
+# All caching functions will simply call through
+# to the wrapped function, with no caching
+# (since NullCache does not cache).
 
 ## Flask configuration SECRET_KEY variable is needed for passing files into a POST request generates a new session. 
 app.config['SECRET_KEY'] = "ABC123#RDX$678qwv3"
@@ -60,20 +70,25 @@ def upload_image():
         return redirect(request.url)
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], 'selected_img.jpeg'))
         #print('upload_image filename: ' + filename)
         print('Image successfully uploaded and displayed below')
-        return render_template('index.html', filename= filename)
+        predict()    
+        return render_template('index.html', filename='selected_img.jpeg')
     else:
         print('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
 print("index is running!")
 
+
+## redisplays the image on index
 @app.route('/display/<filename>')
 def display_image(filename):
     print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='images/' + filename), code=301)
 
+
+## Verify valid image uploaded
 @app.route('/read_file', methods=['GET'])
 def read_uploaded_file():
     filename = secure_filename(request.args.get('filename'))
@@ -87,17 +102,17 @@ def read_uploaded_file():
     return "Unable to read file"
 
 # creating route that will run the model and create data for data.js
-@app.route("/predict", methods=['GET'])
+@app.route("/predict")
 def predict():
     #initializations
     warnings.simplefilter("ignore")
     label_names = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
-
+    
     ######## IMPORTING IMAGE #########
 
     #import image
-    img = Image.open()  #point to js resource folder holding this file. hold trained model in the resoure folder as well
+    img = Image.open('./static/images/selected_img.jpeg')  #point to js resource folder holding this file. hold trained model in the resoure folder as well
 
 
     # load the saved model
@@ -171,26 +186,42 @@ def predict():
     # exporting to a JSON file
     data = top3_df.to_json(orient= 'records')
     print(data)
-
+    # having route return JSON
+    
+    i=0
     # save top 3 emojis to javascript image folder 'emo3'
     while i<3:
         #use top 3 results df to pull emotions type from top 3 instad of random choice for final file
         emotion = top3_df.iloc[i]['Expression']
         print(emotion)
-        path = '/content/'+emotion+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emoAll/'
+        path = './static/images/emoAll/'+emotion+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emoAll/'
         print(path)
         img = Image.open(path)
         i+=1
-        exportPath = '/emo'+str(i)+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emo3/emo'+str(i)+'.png'
+        exportPath = './static/images/emo3/emo'+str(i)+'.png'  #filepath to use for local version... '../FrontEndDashboard/static/images/emo3/emo'+str(i)+'.png'
         print(exportPath)
         img.save(exportPath)
-
-    # having route return JSON
+    
     return(data)
+
+    # return send_file(os.path.join('/static/images/', filename))
    
 @app.errorhandler(500)
 def server_error(error):
     return render_template('error.html'), 500    
 
 
-    
+if __name__ == "__main__":
+    app.run(DEBUG=True)  
+
+
+
+
+""" # prevent cached responses
+@app.after_request
+    if app.config["DEBUG"]:
+        def after_request(response):
+            response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
+            response.headers["Expires"] = 0
+            response.headers["Pragma"] = "no-cache"
+            return response """
