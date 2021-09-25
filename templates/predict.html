@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sweet Emojis</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body class="bg-dark">
+    <div class="wrapper">
+
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">Sweet Emojis</a>
+        </nav>
+
+        <div class="jumbotron">
+            <h1 class="display-5">Emoji The Possibilities</h1>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <!-- Bring in image with buttons for upload new file and running model-->
+                    <!-- Add event listeners for the buttons -->
+
+                    <h3>Image Selected</h3>
+
+                        <!-- if images is False/None/non-existent, then default to error message -->
+                        <img
+                            src="../static/images/selected_img.jpeg"
+                            style="width:300px;height:300px;"
+                        />
+                </div>
+
+                <div class="col-md-1 pad-the-emo">
+                    <!-- add results from the model here -->
+                    <ol>
+                        <li>
+                            <img
+                            src="../static/images/emo3/emo1.png"
+                            style="width:50px;height:50px;"
+                            />
+                        </li>
+                        <li>
+                            <img
+                            src="../static/images/emo3/emo2.png"
+                            style="width:50px;height:50px;"
+                            />
+                        </li>
+                        <li>
+                            <img
+                            src="../static/images/emo3/emo3.png"
+                            style="width:50px;height:50px;"
+                            />
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="col-md-4 pad-the-tbl">
+                    <!-- add results from the model here -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Expression</th>
+                                <th>EmoScore</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/app.js"></script>
+
+</body>
+</html>
