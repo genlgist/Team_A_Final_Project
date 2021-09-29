@@ -23,13 +23,6 @@ UPLOAD_FOLDER = 'static/images/'
 # defining flask app
 app = Flask(__name__)
 
-
-""" app.config["CACHE_TYPE"] = "null"
-# change to "redis" and restart to cache again
-
-# some time later
-cache.init_app(app) """
-
 # All caching functions will simply call through
 # to the wrapped function, with no caching
 # (since NullCache does not cache).
@@ -80,15 +73,7 @@ def upload_image():
         return redirect(request.url)
 print("index is running!")
 
-
-## redisplays the image on index
-@app.route('/display/<filename>')
-def display_image(filename):
-    print('display_image filename: ' + filename)
-    return redirect(url_for('static', filename='images/' + filename), code=301)
-
-
-## Verify valid image uploaded
+## Verify valid image uploaded 
 @app.route('/read_file', methods=['GET'])
 def read_uploaded_file():
     filename = secure_filename(request.args.get('filename'))
@@ -217,11 +202,3 @@ if __name__ == "__main__":
 
 
 
-""" # prevent cached responses
-@app.after_request
-    if app.config["DEBUG"]:
-        def after_request(response):
-            response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
-            response.headers["Expires"] = 0
-            response.headers["Pragma"] = "no-cache"
-            return response """
