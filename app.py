@@ -23,10 +23,6 @@ UPLOAD_FOLDER = 'static/images/'
 # defining flask app
 app = Flask(__name__)
 
-# All caching functions will simply call through
-# to the wrapped function, with no caching
-# (since NullCache does not cache).
-
 ## Flask configuration SECRET_KEY variable is needed for passing files into a POST request generates a new session. 
 app.config['SECRET_KEY'] = "ABC123#RDX$678qwv3"
 
@@ -98,11 +94,6 @@ def predict():
 
     #import image
     img = Image.open('./static/images/selected_img.jpeg')  #point to js resource folder holding this file. hold trained model in the resoure folder as well
-
-
-    # load the saved model
-   # model = load_model("models/final_model.h5")  # put in resource folder with selected image
-   # print('Tensorflow keras Model loaded successfully')
 
 
     # standardizing image
